@@ -186,13 +186,38 @@ transform:translateY(-10px);
 
 /* CONTACT */
 
-.contact{
+#contact{
 text-align:center;
+padding:80px 10%;
 }
 
-.email{
-color:#38bdf8;
-font-weight:500;
+#contact h2{
+margin-bottom:30px;
+}
+
+#contact form{
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+#contact input,
+#contact textarea{
+padding:12px;
+border-radius:8px;
+border:none;
+outline:none;
+}
+
+#contact button{
+padding:12px;
+background:#38bdf8;
+ border:none;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
 }
 
 /* FOOTER */
@@ -323,13 +348,23 @@ Hey there! I'm Parth Chauhan, a Computer Engineering student at Parul University
 
 <!-- CONTACT -->
 
-<section class="section contact" id="contact">
+<section id="contact">
 
-<h2 class="section-title">Contact</h2>
+<h2>Contact Me</h2>
 
-<p>Email: <span class="email">parthchn13@gmail.com</span></p>
+<form name="contact" method="POST" data-netlify="true">
 
-<a href="mailto:parthchn13@gmail.com" class="btn">Send Email</a>
+<input type="hidden" name="form-name" value="contact">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="email" name="email" placeholder="Your Email" required>
+
+<textarea name="message" placeholder="Your Message" required></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
 
 </section>
 
