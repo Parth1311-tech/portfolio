@@ -186,39 +186,114 @@ transform:translateY(-10px);
 
 /* CONTACT */
 
-#contact{
-text-align:center;
-padding:80px 10%;
+<!-- =============================================
+     CSS — Add this inside your <style> tag
+     (or your existing CSS file)
+     ============================================= -->
+<style>
+/* ---- Contact Section ---- */
+#contact {
+  padding: 80px 20px;
+  text-align: center;
 }
 
-#contact h2{
-margin-bottom:30px;
+.contact-container {
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-#contact form{
-max-width:500px;
-margin:auto;
-display:flex;
-flex-direction:column;
-gap:15px;
+.contact-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 0 10px;
+  /* Inherits your existing heading color */
 }
 
-#contact input,
-#contact textarea{
-padding:12px;
-border-radius:8px;
-border:none;
-outline:none;
+.contact-subtitle {
+  font-size: 0.95rem;
+  opacity: 0.55;
+  font-weight: 300;
+  margin: 0 0 48px;
+  letter-spacing: 0.2px;
 }
 
-#contact button{
-padding:12px;
-background:#38bdf8;
- border:none;
-border-radius:8px;
-font-weight:bold;
-cursor:pointer;
+.contact-cards {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 32px 28px;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.contact-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-4px);
+}
+
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Icon accent colors */
+.email-icon  { background: rgba(91, 173, 235, 0.12); color: #5badeb; }
+.phone-icon  { background: rgba(93, 202, 159, 0.12); color: #5dca9f; }
+.github-icon { background: rgba(200, 200, 200, 0.10); color: #cccccc; }
+
+.contact-label {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0.4;
+  font-weight: 400;
+}
+
+.contact-value {
+  font-size: 12.5px;
+  opacity: 0.8;
+  font-weight: 400;
+  line-height: 1.5;
+  word-break: break-all;
+  text-align: center;
+}
+
+/* Responsive: stack cards on small screens */
+@media (max-width: 480px) {
+  .contact-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-card {
+    width: 240px;
+  }
+}
+</style>
+
 
 /* FOOTER */
 
@@ -346,33 +421,64 @@ Hey there! I'm Parth Chauhan, a Computer Engineering student at Parul University
 </section>
 
 
-<!-- CONTACT FORM -->
+<!-- CONTACT -->
+
+<!-- =============================================
+     CONTACT SECTION — Replace your existing
+     <section id="contact"> ... </section> block
+     with this code in your portfolio HTML file.
+     
+     IMPORTANT: Fill in your real details below:
+     - parthchn13@gmail.com
+     - +91 7041078348 (your phone number)
+     - https://github.com/Parth1311-tech
+     =========================================== -->
 
 <section id="contact">
+  <div class="contact-container">
+    <h2 class="contact-title">Contact Me</h2>
+    <p class="contact-subtitle">Feel free to reach out — I'm always open to connecting.</p>
 
-<h2>Contact Me</h2>
+    <div class="contact-cards">
 
-<form name="contact" method="POST" data-netlify="true" netlify action="/success.html">
+      <!-- Email Card -->
+      <a class="contact-card" href="mailto:parthchn13@gmail.com">
+        <div class="contact-icon email-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="3"/>
+            <polyline points="2,4 12,13 22,4"/>
+          </svg>
+        </div>
+        <span class="contact-label">Email</span>
+        <span class="contact-value">parthchn13@gmail.com</span>
+      </a>
 
-<input type="hidden" name="form-name" value="contact">
+      <!-- Phone Card -->
+      <a class="contact-card" href="tel:+917041078348">
+        <div class="contact-icon phone-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </div>
+        <span class="contact-label">Phone</span>
+        <span class="contact-value">+91 70410 78348</span>
+      </a>
 
-<!-- SPAM PROTECTION -->
+      <!-- GitHub Card -->
+      <a class="contact-card" href="https://github.com/Parth1311-tech" target="_blank" rel="noopener noreferrer">
+        <div class="contact-icon github-icon">
+          <svg viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+        </div>
+        <span class="contact-label">GitHub</span>
+        <span class="contact-value">github.com/Parth1311-tech</span>
+      </a>
 
-<p hidden>
-<input name="bot-field">
-</p>
-
-<input type="text" name="name" placeholder="Your Name" required>
-
-<input type="email" name="email" placeholder="Your Email" required>
-
-<textarea name="message" placeholder="Your Message" required></textarea>
-
-<button type="submit">Send Message</button>
-
-</form>
-
+    </div>
+  </div>
 </section>
+
 
 <footer>
 
